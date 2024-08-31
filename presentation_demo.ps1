@@ -1,34 +1,15 @@
-$enc = [System.Text.Encoding]::UTF8
-
-function xor {
-    param($string, $method)
-    $xorkey = $enc.GetBytes("secretkey")
-
-    if ($method -eq "decrypt"){
-        $string = $enc.GetString([System.Convert]::FromBase64String($string))
-    }
-
-    $byteString = $enc.GetBytes($string)
-    $xordData = $(for ($i = 0; $i -lt $byteString.length; ) {
-        for ($j = 0; $j -lt $xorkey.length; $j++) {
-            $byteString[$i] -bxor $xorkey[$j]
-            $i++
-            if ($i -ge $byteString.Length) {
-                $j = $xorkey.length
-            }
-        }
-    })
-
-    if ($method -eq "encrypt") {
-        $xordData = [System.Convert]::ToBase64String($xordData)
-    } else {
-        $xordData = $enc.GetString($xordData)
-    }
-    
-    return $xordData
-}
-
-$output = xor "text to encrypt" "encrypt"
-# $output = xor "ciphertext" "decrypt"
-
-Write-Host $output
+#This script is a modified version of a script initially written by Carlos Perez
+Remove-Module PowerSploit -ErrorAction SilentlyContinue
+$webclient = New-Object System.Net.WebClient
+$url = "https://github.com/mattifestation/PowerSploit/archive/master.zip"
+$file = "$($env:TEMP)\PowerSploit.zip"
+$webclient.DownloadFile($url,$file)
+#Unblock-File -Path $file
+$targetondisk = "$([System.Environment]::GetFolderPath('MyDocuments'))\WindowsPowerShell\Modules"
+New-Item -ItemType Directory -Force -Path $targetondisk | out-null
+$shell_app=new-object -com shell.application
+$zip_file = $shell_app.namespace($file)
+$destination = $shell_app.namespace($targetondisk)
+$destination.Copyhere($zip_file.items(), 0x10)
+Rename-Item -Path ($targetondisk+"\PowerSploit-master") -NewName "PowerSploit" -Force
+set-location $targetondisk"\PowerSploit"; Import-Module .\PowerSploit
