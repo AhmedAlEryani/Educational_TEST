@@ -33,7 +33,7 @@ ___.                ____.     .__  .__                   _____                  
 #---------------------------------------------------------[Initialisations]--------------------------------------------------------
 
 # Directory Target to crypt 
-$TargetEncr = "C:\Users\Public\Documents\Ransome_TEST"
+$TargetEncr = "C:\RanSim"
 
 # At the end load CPU to triggered some behavior alarm 
 $CPULoad = $false
@@ -42,7 +42,7 @@ $CPULoad = $false
 $SelfDestroy = $false
 
 # Delete private key after 
-$DeleteKey = $false 
+$DeleteKey = $true 
 
 # UI  
 $delay = 60  # Delay to show the UI 
@@ -51,7 +51,7 @@ $delay = 60  # Delay to show the UI
 $CertName = "DEMO RANSOMWARE"
 
 #Set Error & Warning Action 
-$ErrorActionPreference = "SilentlyContinue"
+$ErrorActionPreference = "Stop"
 $WarningPreference = "SilentlyContinue"
 
 #####################################
