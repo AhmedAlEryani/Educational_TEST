@@ -8,7 +8,7 @@ $TargetEncr = "C:\Users\Public\Documents\Ransome_TEST"
 $CPULoad = $false
 
 # Delete the script ransomware.ps1 
-$SelfDestroy = $true
+$SelfDestroy = $false
 
 # Delete private key after 
 $DeleteKey = $false 
