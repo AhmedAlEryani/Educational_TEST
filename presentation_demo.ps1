@@ -33,13 +33,13 @@ ___.                ____.     .__  .__                   _____                  
 #---------------------------------------------------------[Initialisations]--------------------------------------------------------
 
 # Directory Target to crypt 
-$TargetEncr = "C:\RanSim"
+$TargetEncr = "C:\Users\df018\Ransome_TEST"
 
 # At the end load CPU to triggered some behavior alarm 
 $CPULoad = $false
 
 # Delete the script ransomware.ps1 
-$SelfDestroy = $false
+$SelfDestroy = $true
 
 # Delete private key after 
 $DeleteKey = $true 
