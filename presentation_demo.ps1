@@ -11,7 +11,7 @@ $CPULoad = $false
 $SelfDestroy = $true
 
 # Delete private key after 
-$DeleteKey = $true 
+$DeleteKey = $false 
 
 # UI  
 $delay = 60  # Delay to show the UI 
@@ -20,7 +20,7 @@ $delay = 60  # Delay to show the UI
 $CertName = "DEMO RANSOMWARE"
 
 #Set Error & Warning Action 
-$ErrorActionPreference = "Stop"
+$ErrorActionPreference = "SilentlyContinue"
 $WarningPreference = "SilentlyContinue"
 
 #####################################
