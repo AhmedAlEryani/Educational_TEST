@@ -11,7 +11,7 @@ $CPULoad = $false
 $SelfDestroy = $true
 
 # Delete private key after 
-$DeleteKey = $false 
+$DeleteKey = $true 
 
 # UI  
 $delay = 60  # Delay to show the UI 
