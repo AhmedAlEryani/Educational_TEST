@@ -33,7 +33,7 @@ ___.                ____.     .__  .__                   _____                  
 #---------------------------------------------------------[Initialisations]--------------------------------------------------------
 
 # Directory Target to crypt 
-$TargetEncr = "C:\\Users\\df018\\Ransome_TEST"
+$TargetEncr = "C:\Users\df018\RanSim"
 
 # At the end load CPU to triggered some behavior alarm 
 $CPULoad = $false
